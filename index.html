@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/simple-lightbox.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="fonts/all.css"/>  
+    <title>Phono - Headphones of the future</title>
+</head>
+<body id="home">
+    <nav class="navbar">
+        <div class="container">
+            <div class="hamburger">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>   
+            <div class="logo">
+              <img src="img/logo.jpg" alt=""/>
+            </div>
+            <ul class="nav">
+                <li><a href="#home">Store</a></li>
+                <li><a href="http://shopify.com">Safety</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+<!---SHOWCASE-->
+
+<section class="section-a">
+    <div class="container">
+        <div>
+            <h1>The New Wave of Innovation</h1>
+            <p>Years of intensive research in the Chemicals Industry have led us to innovations, embraced by our customers from marine and construction industries, as well as individual households worldwide.</p>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+        <img src="img/showcase.png"/>
+    </div>
+</section>
+
+<!--Overlay Text-->
+
+<section class="section-b">
+    <div class="overlay">
+        <div class="section-b-inner">
+            <h3>More Leisure & Less Work</h3>
+            <h2>We provide solutions that complement your lifestyle</h2>
+            <p>Our product range will reduce time and cost spent on removing unwanted top coats of man-made constructions, such as: paint, grease, mould, fungal and algal growths.</p>
+        </div>
+    </div>
+</section>
+
+<!--Gallery-->
+<section class="section-c">
+<div class="gallery">
+        <a href="img/001.jpg" class="big"
+          ><img src="img/001.jpg" alt=""
+        /></a>
+        <a href="img/002.jpg" class="big"
+          ><img src="img/002.jpg" alt=""
+        /></a>
+        <a href="img/003.jpg" class="big"
+          ><img src="img/003.jpg" alt=""
+        /></a>
+       <a href="img/004.jpg" class="big">
+          <img src="img/004.jpg" alt=""
+        /></a>
+        <!--<a href="img/05.jpg" class="big"
+          ><img src="img/05_thumb.jpg" alt=""
+        /></a>
+        <a href="img/06.jpg" class="big"
+          ><img src="img/06.jpg" alt=""
+        /></a>-->
+</div>
+</section>
+
+<section class="section-footer">
+  <div class="container">
+    <div>
+      <h2>Let's Connect</h2>
+      <a href="http://twitter.com">
+      <i class="fab fa-twitter fa-2x"></i>
+      </a>
+      <a href="http://facebook.com">
+      <i class="fab fa-facebook fa-2x"></i>
+      </a>
+      <a href="http://youtube.com">
+      <i class="fab fa-youtube fa-2x"></i>
+      </a>
+    </div>
+    <div>
+      <h3>Company Info</h3>
+      <ul>
+        <li><a href="#">Store</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Blog Posts</h3>
+      <ul>
+        <li><a href="#">Lorem, ipsum dolor.</a></li>
+        <li><a href="#">Lorem, ipsum dolor.</a></li>
+        <li><a href="#">Lorem, ipsum dolor.</a></li>
+        <li><a href="#">Lorem, ipsum dolor.</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Discount Code</h3>
+      <p>Receive 10% discount off all you purchases. Its easy - enter email below</p>
+      <form name="email-form" method="POST" data-netlify="true">
+        <div class="email-form">
+          <span class="form-control wrap">
+            <input 
+            type="email" 
+            name="email" 
+            id="email" 
+            size="40" 
+            class="form-control"
+            placeholder="Email"
+            />
+          </span>
+          <button type="submit" class="form-control submit">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!--Jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+</script>
+
+<script src="js/simple-lightbox.jquery.min.js"></script>
+
+<!--Jquery to open simplelightbox-->
+<script>
+        $(function() {
+        var lightbox = $('.gallery a').simpleLightbox();
+        });
+</script>
+
+<!--JS for humburger menu-->
+<script>
+let hamburger = document.querySelector('.hamburger');
+let navLinks = document.querySelector('.nav');
+let links = document.querySelectorAll('.nav li');
+
+
+hamburger.addEventListener('click', toggleNav);
+links.forEach(link => {link.addEventListener('click', toggleNav)});
+
+function toggleNav(event) {
+    navLinks.classList.toggle('open');
+    links.forEach(link => {
+    link.classList.toggle('fade');
+    })
+}
+</script>
+</body>
+</html>
