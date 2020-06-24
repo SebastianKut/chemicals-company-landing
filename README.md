@@ -1,2 +1,4 @@
 # Chemical supplier Landing Page
- Landing page created in HTML/CSS and JavaScript. Web page also utilizes jquery to add simple light box functionality for image library.
+ Landing page created in HTML/CSS and JavaScript. Web page also utilizes jquery to add simple light box functionality for image library 
+ https://sebastiankut.github.io/chemicals-company-landing/
+ 
