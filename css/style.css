@@ -374,13 +374,32 @@ img {
 
 /*humburger menu*/
 
-.line{
+.line-1, .line-2, .line-3{
     width: 30px;
     height: 3px;
     background: #333;
-    margin: 5px;
+    margin: 6px 0;
     border-radius: 20px;
+    transition: 0.4s;
   }
+
+/* Rotate first bar */
+.line-1.change {
+    -webkit-transform: rotate(-45deg) translate(-6px, 7px) ;
+    transform: rotate(-45deg) translate(-6px, 7px) ;
+  }
+  
+  /* Fade out the second bar */
+  .line-2.change {
+    opacity: 0;
+  }
+  
+  /* Rotate last bar */
+  .line-3.change {
+    -webkit-transform: rotate(45deg) translate(-6px, -7px) ;
+    transform: rotate(45deg) translate(-6px, -7px) ;
+  }
+
 
 .navbar .container {
     position: relative;

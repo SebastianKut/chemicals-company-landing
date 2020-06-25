@@ -14,9 +14,9 @@
     <nav class="navbar">
         <div class="container">
             <div class="hamburger">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
+              <div class="line-1"></div>
+              <div class="line-2"></div>
+              <div class="line-3"></div>
             </div>   
             <div class="logo">
               <img src="img/logo.jpg" alt=""/>
@@ -146,6 +146,7 @@
 let hamburger = document.querySelector('.hamburger');
 let navLinks = document.querySelector('.nav');
 let links = document.querySelectorAll('.nav li');
+let lines = document.querySelectorAll('.hamburger div');
 
 
 hamburger.addEventListener('click', toggleNav);
@@ -153,8 +154,13 @@ links.forEach(link => {link.addEventListener('click', toggleNav)});
 
 function toggleNav(event) {
     navLinks.classList.toggle('open');
+
     links.forEach(link => {
-    link.classList.toggle('fade');
+      link.classList.toggle('fade');
+    })
+
+    lines.forEach(line => {
+      line.classList.toggle('change');
     })
 }
 </script>
