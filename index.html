@@ -11,6 +11,7 @@
     <title>HD Chemicals</title>
 </head>
 <body id="home">
+  <div class="blackout"></div>
     <nav class="navbar">
         <div class="container">
             <div class="hamburger">
@@ -147,13 +148,37 @@ let hamburger = document.querySelector('.hamburger');
 let navLinks = document.querySelector('.nav');
 let links = document.querySelectorAll('.nav li');
 let lines = document.querySelectorAll('.hamburger div');
+let menuOverlay = document.querySelector('.blackout');
 
 
 hamburger.addEventListener('click', toggleNav);
+
 links.forEach(link => {link.addEventListener('click', toggleNav)});
+
+menuOverlay.addEventListener('click', toggleNav);
+
+window.addEventListener('resize', () => {
+
+  navLinks.classList.remove('open');
+
+  Array.from(navLinks.classList).includes('open') ? menuOverlay.style.display = 'block' : menuOverlay.style.display = 'none';
+
+  links.forEach(link => {
+      link.classList.remove('fade');
+    });
+
+  lines.forEach(line => {
+      line.classList.remove('change');
+    })
+
+});
+
+
 
 function toggleNav(event) {
     navLinks.classList.toggle('open');
+
+    Array.from(navLinks.classList).includes('open') ? menuOverlay.style.display = 'block' : menuOverlay.style.display = 'none';
 
     links.forEach(link => {
       link.classList.toggle('fade');
@@ -163,6 +188,8 @@ function toggleNav(event) {
       line.classList.toggle('change');
     })
 }
+
+
 </script>
 </body>
 </html>
