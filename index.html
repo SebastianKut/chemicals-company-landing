@@ -144,51 +144,56 @@
 
 <!--JS for humburger menu-->
 <script>
-let hamburger = document.querySelector('.hamburger');
+
+ // GLOBAL VARIABLES-----------------------------------------------
+ let hamburger = document.querySelector('.hamburger');
 let navLinks = document.querySelector('.nav');
 let links = document.querySelectorAll('.nav li');
 let lines = document.querySelectorAll('.hamburger div');
 let menuOverlay = document.querySelector('.blackout');
 
-
+//EVENT LISTENERS-------------------------------------------------
 hamburger.addEventListener('click', toggleNav);
 
 links.forEach(link => {link.addEventListener('click', toggleNav)});
 
 menuOverlay.addEventListener('click', toggleNav);
 
-window.addEventListener('resize', () => {
+// When window size changes and nav is open - close nav 
+window.addEventListener('resize', closeMenu) 
 
-  navLinks.classList.remove('open');
+//FUNCTIONS ------------------------------------------------------
+function closeMenu() {
 
-  Array.from(navLinks.classList).includes('open') ? menuOverlay.style.display = 'block' : menuOverlay.style.display = 'none';
-
-  links.forEach(link => {
-      link.classList.remove('fade');
-    });
-
-  lines.forEach(line => {
-      line.classList.remove('change');
-    })
-
-});
-
-
-
-function toggleNav(event) {
-    navLinks.classList.toggle('open');
+    navLinks.classList.remove('open');
 
     Array.from(navLinks.classList).includes('open') ? menuOverlay.style.display = 'block' : menuOverlay.style.display = 'none';
 
     links.forEach(link => {
+      link.classList.remove('fade');
+    });
+
+    lines.forEach(line => {
+        line.classList.remove('change');
+      })
+
+}
+
+
+function toggleNav(event) {
+  // add open class to open nav
+    navLinks.classList.toggle('open');
+  // display/hide overlay under menu
+    Array.from(navLinks.classList).includes('open') ? menuOverlay.style.display = 'block' : menuOverlay.style.display = 'none';
+  // fade links when open menu
+    links.forEach(link => {
       link.classList.toggle('fade');
     })
-
+  // transform hamburger icon into X 
     lines.forEach(line => {
       line.classList.toggle('change');
     })
 }
-
 
 </script>
 </body>
